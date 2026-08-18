@@ -1,0 +1,38 @@
+{
+  "response": {
+    "order_id": "order-1001",
+    "status": "accepted"
+  },
+  "tool_calls": [
+    {
+      "name": "check_inventory",
+      "arguments": {
+        "sku": "book-42",
+        "quantity": 2,
+        "warehouse": "primary"
+      },
+      "result": {
+        "available": true
+      }
+    },
+    {
+      "name": "create_order",
+      "arguments": {
+        "customer_id": "customer-7",
+        "sku": "book-42",
+        "quantity": 2
+      },
+      "approval_requested": true,
+      "approval_granted": true,
+      "result": {
+        "order_id": "order-1001"
+      }
+    }
+  ],
+  "agent_steps": 3,
+  "model_calls": 2,
+  "usage": {
+    "tokens": 320,
+    "cost": 0.0042
+  }
+}
